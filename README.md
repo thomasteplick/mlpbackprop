@@ -19,7 +19,7 @@ The user selects the MLP training parameters:
 <li>Layer Depth</li>
 <li>Training Examples</li>
 <li>Classes</li>
-<li>Learning RateL</li>
+<li>Learning Rate</li>
 <li>Momentum</li>
 <li>Epochs</li>
 <li>Separation</li>
