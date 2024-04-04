@@ -27,21 +27,21 @@ The user selects the MLP training parameters:
 <li>Class Shape</li>
 <br>
 <p>
-The Learning Rate and Momentum must be less than one.  Each Epoch consists of the number of Training Examples.  
+The <i>Learning Rate</i> and <i>Momentum</i> must be less than one.  Each <i>Epoch</i> consists of the number of <i>Training Examples</i>.  
 One training example is the x-y coordinate of the point in the Cartesian plane and the desired class (0, 1, …).
-The Separation specifies how far apart the classes are.  Entering zero means there is no distance between the classes.
+The <i>Separation</i> specifies how far apart the classes are.  Entering zero means there is no distance between the classes.
 Each class can therefore be regarded as a cluster of points; the hidden layers determine where those clusters are.
-The Ensembles are used to average the Epochs and to minimize the variance of the mean-square-error (MSE).  
-It can be just set to one.  The Class Shape is the shape of the boundary of each cluster of points.
+The <i>Ensembles</i> are used to average the Epochs and to minimize the variance of the mean-square-error (MSE).  
+It can be just set to one.  The <i>Class Shape</i> is the shape of the boundary of each cluster of points.
 </p>
 <p>
-When the Submit button on the MLP Training Parameters form is clicked, the weights in the network are trained
+When the <i>Submit</i> button on the MLP Training Parameters form is clicked, the weights in the network are trained
 and the mean-square-error (MSE) is graphed versus Epoch.  As can be seen in the screen shots below, there is significant variance over the ensemble.
 One way to reduce the variance is to select more than one ensemble; the ensemble average of the MSE will then be plotted.  However,
 the weights are not averaged over the ensembles.  The final weights are the result of one ensemble, the last one.
 </p>
 <p>
-When the Test link is clicked, 10,000 examples are supplied to the MLP.  It classifies the x-y coordinates.
+When the <i>Test</i> link is clicked, 10,000 examples are supplied to the MLP.  It classifies the x-y coordinates.
 The test results are tabulated and graphed.  Each class has a different color to make it easier to understand the results.
 As can be seen in the screen shots below, the farther apart the classes are, the better the results.  
 It takes some trial-and-error with the MLP Training Parameters to reduce the MSE to zero.  It is possible to a specify a 
