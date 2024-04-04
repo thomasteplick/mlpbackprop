@@ -51,3 +51,5 @@ network, the more training examples will be needed to reduce the MSE to zero.  C
 phase and the MLP Training Parameters must be entered again.
 </p>
 
+![image](https://github.com/thomasteplick/mlpbackprop/assets/117768679/0e70faa5-0cb7-4b97-84b5-4e76cdaaaa22)
+
