@@ -139,7 +139,7 @@ type MLP struct {
 	separation       int       // class separation in x-y coordinate units
 	testingExamples  int       // number of testing examples
 	ensembles        int       // number of ensembles to average
-	classShape       string    // square or circle
+	classShape       string    // squareshape or circleshape
 }
 
 // test statistics that are tabulated in HTML
@@ -428,6 +428,7 @@ func (mlp *MLP) createExamples(testing bool) error {
 	// remove bias, make zero mean
 	offsetx := float64(mlp.bounds[mlp.classes-1].xmin+1.0) / 2.0
 	offsety := float64(mlp.bounds[mlp.classes-1].ymin+1.0) / 2.0
+	fmt.Printf("offsetx = %f, offsety = %f\n", offsetx, offsety)
 	examples := mlp.trainingExamples
 	if testing {
 		// Set endpoints for scaling the plot if testing
@@ -438,7 +439,7 @@ func (mlp *MLP) createExamples(testing bool) error {
 		// examples to generate
 		examples = testingExamples
 	}
-	if mlp.classShape == "square" {
+	if mlp.classShape == "squareshape" {
 		// an example consists of an x-y coordinate and the class
 		for i := 0; i < examples; i++ {
 			class := rand.Intn(mlp.classes)
@@ -448,16 +449,19 @@ func (mlp *MLP) createExamples(testing bool) error {
 				y:       mlp.bounds[class].ymin + rand.Float64() - offsety,
 			}
 		}
-		// circle class sha
+		// circleshape
 	} else {
 		// an example consists of an x-y coordinate and the class
 		const k = 2.0 * math.Pi
+		// circle has radius = 1, diameter = 2
 		for i := 0; i < examples; i++ {
 			class := rand.Intn(mlp.classes)
+			rad := rand.Float64()
+			ang := k * rand.Float64()
 			mlp.samples[i] = Sample{
 				desired: class,
-				x:       mlp.bounds[class].xmin + math.Cos(k*rand.Float64()) - offsetx,
-				y:       mlp.bounds[class].ymin + math.Sin(k*rand.Float64()) - offsety,
+				x:       mlp.bounds[class].xmin + rad*math.Cos(ang) - offsetx,
+				y:       mlp.bounds[class].ymin + rad*math.Sin(ang) - offsety,
 			}
 		}
 	}
@@ -485,7 +489,7 @@ func (mlp *MLP) createClassPartitions() error {
 	start := 0
 	step := 1
 	// circle has radius = 1, therefore center is offset by 1 in x and y
-	if mlp.classShape == "circle" {
+	if mlp.classShape == "circleshape" {
 		start = 1
 		step = 2
 	}
@@ -565,7 +569,7 @@ func newMLP(r *http.Request, classes int, plot *PlotT) (*MLP, error) {
 	shape := r.FormValue("classshape")
 	if shape != "squareshape" && shape != "circleshape" {
 		fmt.Printf("Class shape must be 'squareshape' or 'circleshape'\n")
-		return nil, fmt.Errorf("class shape must be 'square' or 'circle'")
+		return nil, fmt.Errorf("class shape must be 'squareshape' or 'circleshape'")
 	}
 
 	mlp := MLP{
@@ -887,6 +891,10 @@ func (mlp *MLP) runClassification() error {
 
 	totalCount := 0
 	totalCorrect := 0
+	circleCorrection := 0.0
+	if mlp.classShape == "circleshape" {
+		circleCorrection = -1.0
+	}
 	// tabulate TestResults by converting numbers to string in Results
 	for i := range mlp.plot.TestResults {
 		totalCount += mlp.statistics.classCount[i]
@@ -896,9 +904,9 @@ func (mlp *MLP) runClassification() error {
 			ClassColor: mlp.classColor[i],
 			Count:      strconv.Itoa(mlp.statistics.classCount[i]),
 			Correct:    strconv.Itoa(mlp.statistics.correct[i] * 100 / mlp.statistics.classCount[i]),
-			Xmin:       strconv.FormatFloat(mlp.bounds[i].xmin-offsetx, 'f', 2, 64),
+			Xmin:       strconv.FormatFloat(mlp.bounds[i].xmin+circleCorrection-offsetx, 'f', 2, 64),
 			Xmax:       strconv.FormatFloat(mlp.bounds[i].xmin+1-offsetx, 'f', 2, 64),
-			Ymin:       strconv.FormatFloat(mlp.bounds[i].ymin-offsety, 'f', 2, 64),
+			Ymin:       strconv.FormatFloat(mlp.bounds[i].ymin+circleCorrection-offsety, 'f', 2, 64),
 			Ymax:       strconv.FormatFloat(mlp.bounds[i].ymin+1-offsety, 'f', 2, 64),
 		}
 	}
@@ -992,8 +1000,8 @@ func newTestingMLP(plot *PlotT) (*MLP, error) {
 		fmt.Printf("scanner error: %s", err.Error())
 	}
 
-	fmt.Printf("hidden layer depth = %d, hidden layers = %d, classes = %d, separation = %d\n",
-		mlp.layerDepth, mlp.hiddenLayers, mlp.classes, mlp.separation)
+	fmt.Printf("hidden layer depth = %d, hidden layers = %d, classes = %d, separation = %d, shape = %s\n",
+		mlp.layerDepth, mlp.hiddenLayers, mlp.classes, mlp.separation, mlp.classShape)
 
 	// construct node, init node[i][0].y to 1.0 (bias)
 	mlp.node = make([][]Node, mlp.hiddenLayers+2)
