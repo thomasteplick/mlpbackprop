@@ -47,9 +47,35 @@ As can be seen in the screen shots below, the farther apart the classes are, the
 It takes some trial-and-error with the MLP Training Parameters to reduce the MSE to zero.  It is possible to a specify a 
 more complex MLP than necessary and not get good results.  For example, using more hidden layers, a greater layer depth,
 or over training with more examples than necessary may be detrimental to the MLP.  In general, the more neurons in the
-network, the more training examples will be needed to reduce the MSE to zero.  Clicking the Train link starts a new training
+network, the more training examples will be needed to reduce the MSE to zero.  Clicking the <i>Train</i> link starts a new training
 phase and the MLP Training Parameters must be entered again.
 </p>
 
 ![image](https://github.com/thomasteplick/mlpbackprop/assets/117768679/0e70faa5-0cb7-4b97-84b5-4e76cdaaaa22)
+
+<h3>MLP, 25 Classes, Circle Class Shape, Training Phase</h3>
+
+![MLP25CircleTrain](https://github.com/thomasteplick/mlpbackprop/assets/117768679/9fe9f420-57d9-48e8-a289-d247f827c934)
+
+<h3>MLP, 25 Classes, Circle Class Shape, Testing Phase</h3>
+
+![MLP25CircleTest](https://github.com/thomasteplick/mlpbackprop/assets/117768679/38a4f83f-e4c7-4edb-8536-7da84f68d7b6)
+
+<h3>MLP, 25 Classes, Square Class Shape, Training Phase</h3>
+
+![MLP25SquareTrain](https://github.com/thomasteplick/mlpbackprop/assets/117768679/2651336a-a1f9-42fe-820c-da0458f4483f)
+
+<h3>MLP, 25 Classes, Square Class Shape, Testing Phase</h3>
+
+![MLP25SquareTest](https://github.com/thomasteplick/mlpbackprop/assets/117768679/5d73e9f3-27ee-47fc-af58-ec5fe8ef4022)
+
+<h3>MLP, 25 Classes, Circle Class Shape, Training Phase, Separation=1</h3>
+
+![MLP25CircleTrainSep1](https://github.com/thomasteplick/mlpbackprop/assets/117768679/d8c65d0f-18e3-4c8f-811d-53fe751f0a2b)
+
+<h3>MLP, 25 Classes, Circle Class Shape, Testing Phase, Separation=1</h3>
+
+![MLP25CircleTestSep1](https://github.com/thomasteplick/mlpbackprop/assets/117768679/f43d59f1-c680-4746-b038-8d5b226ebb5b)
+
+
 
