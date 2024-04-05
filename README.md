@@ -1,5 +1,5 @@
 <h3>Multilayer Perceptron Neural Network with the Back-Propagation Algorithm</h3>
-
+<hr>
 This program is a web application written in Go that makes extensive use of the html/template package.
 Navigate to the C:\Users\your-name\MultilayerPerceptron\src\backprop\ directory and issue "go run ann.go" to
 start the Multilayer Perceptron (MLP) Neural Network server. In a web browser enter http://127.0.0.1:8080/mlpbackprop
