@@ -1,4 +1,4 @@
-<h3>Multilayer Perceptron Neural Network with the Backpropagation Algorithm</h3>
+<h3>Multilayer Perceptron Neural Network with the Back-Propagation Algorithm</h3>
 
 This program is a web application written in Go that makes extensive use of the html/template package.
 Navigate to the C:\Users\your-name\MultilayerPerceptron\src\backprop\ directory and issue "go run ann.go" to
@@ -12,8 +12,8 @@ by first propagating the inputs forward, layer by layer, to the output layer of 
 difference between the desired and its output and back propagates the errors to the input layer.  The hidden and input layer
 weights are assigned “credit” for the errors by using the chain rule of differential calculus.  Each neuron consists of a
 linear combiner and an activation function.  This program uses the hyperbolic tangent function to serve as the activation function.
-This function is differentiable and limits its output to be between -1 and 1.  The goal of this program is to classify an x-y coordinate
-to a class (a number).  The boundary of each class can be in the shape of a square or a circle.
+This function is differentiable and limits its output to be between -1 and 1.  <b>The purpose of this program is to classify an x-y coordinate
+to a class (a number)</b>.  The boundary of each class can be in the shape of a square or a circle.
 The user selects the MLP training parameters:
 <li>Hidden Layers</li>
 <li>Layer Depth</li>
@@ -28,7 +28,7 @@ The user selects the MLP training parameters:
 <br>
 <p>
 The <i>Learning Rate</i> and <i>Momentum</i> must be less than one.  Each <i>Epoch</i> consists of the number of <i>Training Examples</i>.  
-One training example is the x-y coordinate of the point in the Cartesian plane and the desired class (0, 1, …).
+One training example is the x-y coordinate of the point in the Cartesian Plane and the desired class (0, 1, …).
 The <i>Separation</i> specifies how far apart the classes are.  Entering zero means there is no distance between the classes.
 Each class can therefore be regarded as a cluster of points; the hidden layers determine where those clusters are.
 The <i>Ensembles</i> are used to average the Epochs and to minimize the variance of the mean-square-error (MSE).  
@@ -53,29 +53,32 @@ phase and the MLP Training Parameters must be entered again.
 
 ![image](https://github.com/thomasteplick/mlpbackprop/assets/117768679/0e70faa5-0cb7-4b97-84b5-4e76cdaaaa22)
 
-<h3>MLP, 25 Classes, Circle Class Shape, Training Phase</h3>
+<h3>MLP, 25 Classes, Circle Class Shape, Training Phase, MSE vs Epoch</h3>
 
 ![MLP25CircleTrain](https://github.com/thomasteplick/mlpbackprop/assets/117768679/9fe9f420-57d9-48e8-a289-d247f827c934)
 
-<h3>MLP, 25 Classes, Circle Class Shape, Testing Phase</h3>
+<h3>MLP, 25 Classes, Circle Class Shape, Testing Phase, Classification Test Results</h3>
 
 ![MLP25CircleTest](https://github.com/thomasteplick/mlpbackprop/assets/117768679/38a4f83f-e4c7-4edb-8536-7da84f68d7b6)
 
-<h3>MLP, 25 Classes, Square Class Shape, Training Phase</h3>
+<h3>MLP, 25 Classes, Square Class Shape, Training Phase, MSE vs Epoch</h3>
 
 ![MLP25SquareTrain](https://github.com/thomasteplick/mlpbackprop/assets/117768679/2651336a-a1f9-42fe-820c-da0458f4483f)
 
-<h3>MLP, 25 Classes, Square Class Shape, Testing Phase</h3>
+<h3>MLP, 25 Classes, Square Class Shape, Testing Phase, Classification Test Results</h3>
 
 ![MLP25SquareTest](https://github.com/thomasteplick/mlpbackprop/assets/117768679/5d73e9f3-27ee-47fc-af58-ec5fe8ef4022)
 
-<h3>MLP, 25 Classes, Circle Class Shape, Training Phase, Separation=1</h3>
+<h3>MLP, 25 Classes, Circle Class Shape, Training Phase, Separation=1, MSE vs Epoch</h3>
 
 ![MLP25CircleTrainSep1](https://github.com/thomasteplick/mlpbackprop/assets/117768679/d8c65d0f-18e3-4c8f-811d-53fe751f0a2b)
 
-<h3>MLP, 25 Classes, Circle Class Shape, Testing Phase, Separation=1</h3>
+<h3>MLP, 25 Classes, Circle Class Shape, Testing Phase, Separation=1, Classification Test Results</h3>
 
 ![MLP25CircleTestSep1](https://github.com/thomasteplick/mlpbackprop/assets/117768679/f43d59f1-c680-4746-b038-8d5b226ebb5b)
 
+<h3>MLP, One Class, Circle Class Shape, Testing Phase, Classifcation Test Results</h3>
+
+![MLP1CircleTest](https://github.com/thomasteplick/mlpbackprop/assets/117768679/a0d8f960-0c4f-420b-bf5a-4158462716e5)
 
 
