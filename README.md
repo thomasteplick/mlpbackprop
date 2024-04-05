@@ -13,7 +13,7 @@ difference between the desired and its output and back propagates the errors to 
 weights are assigned “credit” for the errors by using the chain rule of differential calculus.  Each neuron consists of a
 linear combiner and an activation function.  This program uses the hyperbolic tangent function to serve as the activation function.
 This function is non-linear and differentiable and limits its output to be between -1 and 1.  <b>The purpose of this program is to classify an x-y coordinate
-to a class (a number)</b>.  The boundary of each class can be in the shape of a square or a circle.
+in the Cartesian Plane to a class (a number)</b>.  The boundary of each class can be in the shape of a square or a circle.
 The user selects the MLP training parameters:
 <li>Hidden Layers</li>
 <li>Layer Depth</li>
