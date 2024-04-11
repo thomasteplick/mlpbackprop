@@ -36,7 +36,7 @@ It can be just set to one.  The <i>Class Shape</i> is the shape of the boundary 
 </p>
 <p>
 When the <i>Submit</i> button on the MLP Training Parameters form is clicked, the weights in the network are trained
-and the mean-square-error (MSE) is graphed versus Epoch.  As can be seen in the screen shots below, there is significant variance over the ensemble.
+and the mean-square error (MSE) is graphed versus Epoch.  As can be seen in the screen shots below, there is significant variance over the ensemble.
 One way to reduce the variance is to select more than one ensemble; the ensemble average of the MSE will then be plotted.  However,
 the weights are not averaged over the ensembles.  The final weights are the result of one ensemble, the last one.
 </p>
