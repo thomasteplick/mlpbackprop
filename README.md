@@ -53,7 +53,7 @@ phase and the MLP Training Parameters must be entered again.
 
 ![image](https://github.com/thomasteplick/mlpbackprop/assets/117768679/0e70faa5-0cb7-4b97-84b5-4e76cdaaaa22)
 
-<h3>MLP, 25 Classes, Circle Class Shape, Training Phase, MSE vs Epoch</h3>
+<h3>MLP, 25 Classes, Circle Class Shape, Training Phase, MSE vs Epoch Learning Curve</h3>
 
 ![MLP25CircleTrain](https://github.com/thomasteplick/mlpbackprop/assets/117768679/9fe9f420-57d9-48e8-a289-d247f827c934)
 
@@ -61,7 +61,7 @@ phase and the MLP Training Parameters must be entered again.
 
 ![MLP25CircleTest](https://github.com/thomasteplick/mlpbackprop/assets/117768679/38a4f83f-e4c7-4edb-8536-7da84f68d7b6)
 
-<h3>MLP, 25 Classes, Square Class Shape, Training Phase, MSE vs Epoch</h3>
+<h3>MLP, 25 Classes, Square Class Shape, Training Phase, MSE vs Epoch Learning Curve</h3>
 
 ![MLP25SquareTrain](https://github.com/thomasteplick/mlpbackprop/assets/117768679/2651336a-a1f9-42fe-820c-da0458f4483f)
 
@@ -69,7 +69,7 @@ phase and the MLP Training Parameters must be entered again.
 
 ![MLP25SquareTest](https://github.com/thomasteplick/mlpbackprop/assets/117768679/5d73e9f3-27ee-47fc-af58-ec5fe8ef4022)
 
-<h3>MLP, 25 Classes, Circle Class Shape, Training Phase, Separation=1, MSE vs Epoch</h3>
+<h3>MLP, 25 Classes, Circle Class Shape, Training Phase, Separation=1, MSE vs Epoch Learning Curve</h3>
 
 ![MLP25CircleTrainSep1](https://github.com/thomasteplick/mlpbackprop/assets/117768679/d8c65d0f-18e3-4c8f-811d-53fe751f0a2b)
 
